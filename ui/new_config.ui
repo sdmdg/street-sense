@@ -1,0 +1,361 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>Window_Config</class>
+ <widget class="QMainWindow" name="Window_Config">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>889</width>
+    <height>460</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Create new Config</string>
+  </property>
+  <property name="styleSheet">
+   <string notr="true">QWidget {
+background-color: rgb(30, 30, 30)
+
+}
+QLabel{
+color: rgb(200, 200, 200);
+
+}
+
+QPushButton {
+background-color:rgb(40, 40, 40);
+color: rgb(200, 200, 200);
+border: 2px solid rgb(80, 80, 80);
+border-radius: 10px;
+padding: 1px;
+}
+QPushButton:hover {
+background-color:rgb(20, 115, 230);
+	color: rgb(200, 200, 200);
+border: 1px solid rgb(20, 115, 230);
+}
+QPushButton:pressed {
+background-color:rgb(18, 100, 200);
+color: rgb(200, 200, 200);
+border: 1px solid rgb(18, 100, 200);
+}
+QPushButton:disabled {
+background-color:rgb(40, 40, 40);
+color: rgb(100, 100, 100);
+border: 2px solid rgb(50, 50, 50);
+border-radius: 10px;
+}
+
+QLineEdit {
+background-color:rgb(30, 30, 30);
+color: rgb(200, 200, 200);
+border: 2px solid rgb(80, 80, 80);
+border-radius: 10px;
+padding: 1px;
+}
+
+QLineEdit:focus {
+background-color:rgb(30, 30, 30);
+color: rgb(200, 200, 200);
+border: 2px solid rgb(20, 115, 230);
+border-radius: 10px;
+padding: 1px;
+}
+
+QProgressBar {
+background-color:rgb(30, 30, 30);
+border: 2px solid rgb(80, 80, 80);
+border-radius: 6px;
+color:rgb(200, 200, 200);
+text-align: center;
+}
+QProgressBar::chunk {
+background-color:rgb(20, 115, 230);
+border: 2px solid rgb(20, 115, 230);
+border-radius: 1px;
+}
+
+QGroupBox {
+color: rgb(200, 200, 200);
+background: rgb(30, 30, 30);
+border: 1px solid rgba(80, 80, 80, 255);
+border-radius: 2px;
+} 
+
+QListWidget {
+color: rgb(200, 200, 200);
+background: rgb(30, 30, 30);
+border: 1px solid rgba(80, 80, 80, 255);
+border-radius: 2px;
+} </string>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <widget class="QGroupBox" name="grpbox_live">
+    <property name="geometry">
+     <rect>
+      <x>220</x>
+      <y>10</y>
+      <width>661</width>
+      <height>391</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true"/>
+    </property>
+    <property name="title">
+     <string>  Preview  </string>
+    </property>
+    <widget class="QLabel" name="lbl_video_live">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>20</y>
+       <width>640</width>
+       <height>360</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">background-color:rgba(0, 0, 0, 0);
+border: 1px solid rgb(80, 80, 80);</string>
+     </property>
+     <property name="frameShape">
+      <enum>QFrame::Box</enum>
+     </property>
+     <property name="text">
+      <string>-_-</string>
+     </property>
+     <property name="alignment">
+      <set>Qt::AlignCenter</set>
+     </property>
+    </widget>
+   </widget>
+   <widget class="QWidget" name="verticalLayoutWidget">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>10</y>
+      <width>201</width>
+      <height>391</height>
+     </rect>
+    </property>
+    <layout class="QVBoxLayout" name="vLayout">
+     <item>
+      <widget class="QGroupBox" name="gbox_camera">
+       <property name="title">
+        <string>  Camera  </string>
+       </property>
+       <widget class="QPushButton" name="btn_start_feed">
+        <property name="geometry">
+         <rect>
+          <x>150</x>
+          <y>160</y>
+          <width>41</width>
+          <height>23</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>Start</string>
+        </property>
+       </widget>
+       <widget class="QLineEdit" name="input_w">
+        <property name="geometry">
+         <rect>
+          <x>90</x>
+          <y>80</y>
+          <width>41</width>
+          <height>21</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>1280</string>
+        </property>
+       </widget>
+       <widget class="QLabel" name="lbl_1">
+        <property name="geometry">
+         <rect>
+          <x>10</x>
+          <y>20</y>
+          <width>71</width>
+          <height>21</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>Camera ID :</string>
+        </property>
+       </widget>
+       <widget class="QLabel" name="lbl_2">
+        <property name="geometry">
+         <rect>
+          <x>10</x>
+          <y>50</y>
+          <width>71</width>
+          <height>21</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>FPS :</string>
+        </property>
+       </widget>
+       <widget class="QLineEdit" name="input_fps">
+        <property name="geometry">
+         <rect>
+          <x>90</x>
+          <y>50</y>
+          <width>41</width>
+          <height>21</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>24</string>
+        </property>
+       </widget>
+       <widget class="QLineEdit" name="input_h">
+        <property name="geometry">
+         <rect>
+          <x>90</x>
+          <y>110</y>
+          <width>41</width>
+          <height>21</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>720</string>
+        </property>
+       </widget>
+       <widget class="QLabel" name="lbl_3">
+        <property name="geometry">
+         <rect>
+          <x>10</x>
+          <y>80</y>
+          <width>71</width>
+          <height>21</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>Width :</string>
+        </property>
+       </widget>
+       <widget class="QLineEdit" name="input_cam_id">
+        <property name="geometry">
+         <rect>
+          <x>90</x>
+          <y>20</y>
+          <width>91</width>
+          <height>21</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>0</string>
+        </property>
+       </widget>
+       <widget class="QLabel" name="lbl_4">
+        <property name="geometry">
+         <rect>
+          <x>10</x>
+          <y>110</y>
+          <width>71</width>
+          <height>21</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>Height :</string>
+        </property>
+       </widget>
+       <widget class="QLabel" name="lbl_5">
+        <property name="geometry">
+         <rect>
+          <x>140</x>
+          <y>80</y>
+          <width>16</width>
+          <height>21</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>px</string>
+        </property>
+       </widget>
+       <widget class="QLabel" name="lbl_6">
+        <property name="geometry">
+         <rect>
+          <x>140</x>
+          <y>110</y>
+          <width>16</width>
+          <height>21</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>px</string>
+        </property>
+       </widget>
+      </widget>
+     </item>
+     <item>
+      <widget class="QGroupBox" name="gbox_lanes">
+       <property name="title">
+        <string>  Lanes  </string>
+       </property>
+       <widget class="QPushButton" name="btn_add_lane">
+        <property name="enabled">
+         <bool>false</bool>
+        </property>
+        <property name="geometry">
+         <rect>
+          <x>60</x>
+          <y>160</y>
+          <width>81</width>
+          <height>23</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>Add Lane</string>
+        </property>
+       </widget>
+       <widget class="QListWidget" name="list_lanes">
+        <property name="geometry">
+         <rect>
+          <x>10</x>
+          <y>20</y>
+          <width>181</width>
+          <height>131</height>
+         </rect>
+        </property>
+       </widget>
+      </widget>
+     </item>
+    </layout>
+   </widget>
+   <widget class="QGroupBox" name="gbox_buttons">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>410</y>
+      <width>871</width>
+      <height>41</height>
+     </rect>
+    </property>
+    <property name="title">
+     <string/>
+    </property>
+    <widget class="QPushButton" name="btn_save">
+     <property name="enabled">
+      <bool>false</bool>
+     </property>
+     <property name="geometry">
+      <rect>
+       <x>810</x>
+       <y>10</y>
+       <width>45</width>
+       <height>23</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>Save</string>
+     </property>
+    </widget>
+   </widget>
+  </widget>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>
